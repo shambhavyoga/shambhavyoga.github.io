@@ -108,7 +108,7 @@ This project is open source and available for personal and commercial use.
 ## 👤 Author
 
 **Harsh Vardhan Atreya**
-- Email: harsh@shambhavyoga.com
+- Email: shambhavyoga@outlook.com
 - Phone: +91 98765 43210
 
 ## 🙏 Acknowledgments
