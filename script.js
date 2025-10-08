@@ -131,7 +131,22 @@ animateElements.forEach(el => {
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
+        // Check if using Formspree (has action attribute)
+        if (contactForm.getAttribute('action') && contactForm.getAttribute('action').includes('formspree')) {
+            // Let Formspree handle the submission
+            // Show a loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Form will submit naturally to Formspree
+            // After submission, Formspree will redirect or show their thank you page
+            return; // Let the form submit naturally
+        }
+        
+        // Fallback for forms without Formspree
         e.preventDefault();
 
         // Get form data
